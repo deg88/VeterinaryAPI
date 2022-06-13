@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "places")
@@ -28,6 +29,12 @@ public class Place {
 
     @Column(name = "addres", unique = true, nullable = false)
     private String addres;
+
+    @OneToMany(mappedBy = "place")
+    private List<Veterinary> veterinaries;
+
+    @OneToMany(mappedBy = "place")
+    private List<Pet> pets;
 
 
 }

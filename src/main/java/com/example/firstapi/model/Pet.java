@@ -37,5 +37,19 @@ public class Pet {
     @Column(name = "intern", nullable = false)
     private Boolean intern;
 
+    @ManyToOne()
+    @JoinColumn(name = "veteriray", nullable = false)
+    private Veterinary veterinary;
+
+    @ManyToOne()
+    @JoinColumn(name = "owner", nullable = false)
+    private Owner owner;
+
+    @ManyToOne()
+    @JoinColumn(name = "place", nullable = false)
+    private Place place;
+
+
+
 
 }

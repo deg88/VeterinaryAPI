@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "owner")
@@ -31,9 +32,6 @@ public class Owner {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "identification", nullable = false, unique = true)
-    private String identification;
-
     @Column(name = "user_name", nullable = false, unique = true)
     private String userName;
 
@@ -46,4 +44,10 @@ public class Owner {
     @Column(name = "cel", unique = true, nullable = false)
     private Integer cel;
 
+    @ManyToOne
+    @JoinColumn(name = "id_identification",nullable = false)
+    private Identification identification;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Pet> pets;
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "veterinary")
@@ -33,9 +34,6 @@ public class Veterinary {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "identification", nullable = false, unique = true)
-    private String identification;
-
     @Column(name = "user_name", nullable = false, unique = true)
     private String userName;
 
@@ -47,4 +45,17 @@ public class Veterinary {
 
     @Column(name = "cel", unique = true, nullable = false)
     private Integer cel;
+
+    @ManyToOne()
+    @JoinColumn(name = "identification", nullable = false)
+    private Identification identification;
+
+    @ManyToOne()
+    @JoinColumn(name = "place", nullable = false)
+    private Place place;
+
+    @OneToMany(mappedBy = "veterinary")
+    private List<Pet> pets;
+
+
 }
