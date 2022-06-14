@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity()
-@Table(name = "Identification")
+@Table(name = "IdentificationDTOpost")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,12 +18,12 @@ public class Identification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tipo", unique = true, nullable = false)
-    private Integer idTipo;
+    @Column(name = "id_type", unique = true, nullable = false)
+    private Integer idType;
 
-    @OneToMany(mappedBy = "Identification")
+    @OneToMany(mappedBy = "IdentificationDTOpost")
     private List<Owner> owners;
 
-    @OneToMany(mappedBy = "Identification")
+    @OneToMany(mappedBy = "IdentificationDTOpost")
     private List<Veterinary> veterinaries;
 }
