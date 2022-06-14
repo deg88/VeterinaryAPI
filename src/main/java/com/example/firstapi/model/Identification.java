@@ -21,9 +21,9 @@ public class Identification {
     @Column(name = "id_type", unique = true, nullable = false)
     private Integer idType;
 
-    @OneToMany(mappedBy = "IdentificationDTOpost")
+    @OneToMany(mappedBy = "Identification")
     private List<Owner> owners;
 
-    @OneToMany(mappedBy = "IdentificationDTOpost")
+    @OneToMany(mappedBy = "Identification")
     private List<Veterinary> veterinaries;
 }
