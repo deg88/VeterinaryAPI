@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity()
-@Table(name = "IdentificationDTOpost")
+@Table(name = "Identification")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,9 +21,9 @@ public class Identification {
     @Column(name = "id_type", unique = true, nullable = false)
     private Integer idType;
 
-    @OneToMany(mappedBy = "Identification")
+    @OneToMany(mappedBy = "identification")
     private List<Owner> owners;
 
-    @OneToMany(mappedBy = "Identification")
+    @OneToMany(mappedBy = "identification")
     private List<Veterinary> veterinaries;
 }
