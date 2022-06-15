@@ -18,8 +18,12 @@ public class Identification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_type", unique = true, nullable = false)
-    private Integer idType;
+    @Column(name = "id_identification", unique = true, nullable = false)
+    private Integer idIdentification;
+
+    @Column(name = "type_identification", nullable = false)
+    private Integer typeIdentification;
+
 
     @OneToMany(mappedBy = "identification")
     private List<Owner> owners;

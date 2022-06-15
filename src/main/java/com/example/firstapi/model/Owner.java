@@ -20,29 +20,29 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_", unique = true, nullable = false)
+    @Column(name = "id_owner", unique = true, nullable = false)
     private Integer idOwner;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "name_owner", nullable = false)
+    private String nameOwner;
 
     @Column(name = "local_date_time", columnDefinition = "TIMESTAMP")
-    private LocalDateTime date;
+    private LocalDateTime dateOwner;
 
-    @Column(name = "email", nullable = false)
-    private String email;
+    @Column(name = "email_owner", nullable = false)
+    private String emailOwner;
 
-    @Column(name = "user_name", nullable = false, unique = true)
-    private String userName;
+    @Column(name = "username", nullable = false, unique = true)
+    private String userNameOwner;
 
-    @Column(name = "password", nullable = false, unique = true)
-    private String password;
+    @Column(name = "password_owner", nullable = false, unique = true)
+    private String passwordOwner;
 
-    @Column(name = "addres", unique = true, nullable = false)
-    private String addres;
+    @Column(name = "addres_owner", unique = true, nullable = false)
+    private String addresOwner;
 
-    @Column(name = "cel", unique = true, nullable = false)
-    private Integer cel;
+    @Column(name = "cel_owner", unique = true, nullable = false)
+    private Integer celOwner;
 
     @ManyToOne
     @JoinColumn(name = "id_identification",nullable = false)

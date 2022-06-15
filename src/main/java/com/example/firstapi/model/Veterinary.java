@@ -22,29 +22,29 @@ public class Veterinary {
     @Column(name = "id_veterinary", unique = true, nullable = false)
     private Integer idveterinary;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "name_veterinary", nullable = false)
+    private String nameVeterinary;
 
     @Column(name = "local_date_time", columnDefinition = "TIMESTAMP")
-    private LocalDateTime date;
+    private LocalDateTime dateVeterinary;
 
-    @Column(name = "specialization", nullable = false)
-    private String specialization;
+    @Column(name = "specialization_veterinary", nullable = false)
+    private String specializationVeterinary;
 
-    @Column(name = "email", nullable = false)
-    private String email;
+    @Column(name = "email_veterinary", nullable = false)
+    private String emailVeterinary;
 
-    @Column(name = "user_name", nullable = false, unique = true)
+    @Column(name = "user_name_veterinary", nullable = false, unique = true)
     private String userName;
 
-    @Column(name = "password", nullable = false, unique = true)
-    private String password;
+    @Column(name = "password_veterinary", nullable = false, unique = true)
+    private String passwordVeterinary;
 
-    @Column(name = "addres", unique = true, nullable = false)
-    private String addres;
+    @Column(name = "addres_veterinary", unique = true, nullable = false)
+    private String addresVeterinary;
 
-    @Column(name = "cel", unique = true, nullable = false)
-    private Integer cel;
+    @Column(name = "cel_veterinary", unique = true, nullable = false)
+    private Integer celVeterinary;
 
     @ManyToOne()
     @JoinColumn(name = "identification", nullable = false)
